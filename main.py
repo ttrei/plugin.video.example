@@ -7,8 +7,16 @@ Example video plugin that is compatible with Kodi 19.x "Matrix" and above
 """
 import sys
 from urllib.parse import urlencode, parse_qsl
+import xbmc
 import xbmcgui
 import xbmcplugin
+
+from resources.lib import foo
+
+v = vars().copy()
+for name, value in v.items():
+    xbmc.log(f"MAIN {name}={value}", xbmc.LOGINFO)
+
 
 # Get the plugin url in plugin:// notation.
 _URL = sys.argv[0]
